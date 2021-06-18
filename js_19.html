@@ -12,55 +12,55 @@
 
     <script>
         // задание №1
-        function factorial(number) {
-            return (number != 1) ? number * factorial(number - 1) : 1;
+        function calcFactorial(number) {
+            return (number != 1) ? number * calcFactorial(number - 1) : 1;
         }
-        alert(factorial(6)); // 720
+        alert(calcFactorial(6)); // 720
         //---------------------------------------------------------------------
         // задание №2
         let a = +prompt('min')
         let b = +prompt('max')
-        function recurs(a, b) {
+        function getRecurs(a, b) {
             if (a > b) {
                 if (a == b) {
                     return a;
                 }
-                return a + " " + recurs(a - 1, b);
+                return a + " " + getRecurs(a - 1, b);
             } else {
                 if (a == b) {
                     return a;
                 }
-                return a + " " + recurs(a + 1, b);
+                return a + " " + getRecurs(a + 1, b);
             }
         }
-        console.log(recurs(a, b));
-        console.log(recurs(b, a));
+        console.log(getRecurs(a, b));
+        console.log(getRecurs(b, a));
         //---------------------------------------------------------------------
         // задание №3
-        function reverseStri(num, a = 0) {
+        function getReverse(num, a = 0) {
             if (!num) {
                 return a;
             } else if (a = a * 10 + num % 10) {
-                return reverseStri(Math.floor(num / 10), a)
+                return getReverse(Math.floor(num / 10), a)
             }
-        } alert(reverseStri(12345))
+        } alert(getReverse(12345))
         //---------------------------------------------------------------------
         // задание №4
-        function sumDigits(n) {
+        function calcSumm(n) {
             n = `${n}`;
             if (n.length === 1)
                 return +n;
-            return +n[0] + sumDigits(n.slice(1));
-        } alert(sumDigits(123))
+            return +n[0] + calcSumm(n.slice(1));
+        } alert(calcSumm(123))
         //---------------------------------------------------------------------
         // задание №5
-        function name(n) {
+        function showBracket(n) {
             if (n === 0) {
                 return ''
             } else {
-                return '(' + name(n - 1) + ')'
+                return '(' + showBracket(n - 1) + ')'
             }
-        } alert(name(2));
+        } alert(showBracket(2));
 
     </script>
 </body>
